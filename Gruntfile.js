@@ -146,7 +146,8 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: '.tmp',
+      heroku: 'heroku'
     },
 
     // Add vendor prefixed styles
@@ -355,7 +356,10 @@ module.exports = function (grunt) {
           src: ['generated/*']
         },
           {
-
+            expand: true,
+            cwd: '.tmp/fonts',
+            dest: '<%= yeoman.dist %>/fonts',
+            src: ['**/*.*']
           }
         ]
       },
@@ -379,8 +383,14 @@ module.exports = function (grunt) {
       },
       font_awesome: {
         expand: true,
-        cwd: 'bower_components/font-awesome',
+        cwd: 'bower_components/font-awesome/fonts',
         dest: '.tmp/fonts/',
+        src: '{,*/}*.*'
+      },
+      heroku: {
+        expand: true,
+        cwd: 'dist',
+        dest: 'heroku',
         src: '{,*/}*.*'
       }
     },
@@ -449,6 +459,7 @@ module.exports = function (grunt) {
     'autoprefixer',
     'concat',
     'ngAnnotate',
+    'copy:font_awesome',
     'copy:dist',
     'cdnify',
     'cssmin',
@@ -463,4 +474,6 @@ module.exports = function (grunt) {
   /*  'test', */
     'build'
   ]);
+
+  grunt.registerTask('heroku', ['clean:heroku','copy:heroku']);
 };
