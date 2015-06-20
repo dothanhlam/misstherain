@@ -15,8 +15,10 @@ angular.module('misstherainApp')
     var initSoundAndSong = function() {
       $scope.sound = ngAudio.load("sounds/Nature-sounds-rain.mp3");
       $scope.sound.loop = true;
+      $scope.sound.unlock = true;
       $scope.song = ngAudio.load("songs/Kiss The Rain.mp3");
       $scope.song.loop = true;
+      $scope.song.unlock = true;
     }
 
     $scope.playSound = function() {
