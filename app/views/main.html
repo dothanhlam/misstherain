@@ -10,12 +10,25 @@
     <!-- Codrops top bar -->
     <div class="codrops-top">
       <a href="https://www.youtube.com/watch?v=imGaOIm5HOk">
-        <strong>Song for today: </strong>kiss the rain by yiruma
+        <strong class="fa fa-youtube-square"> Song for today: </strong>kiss the rain by yiruma
       </a>
+      <span class="left">
+        <a ng-class="isPlaying ? 'fa fa-pause': 'fa fa-play-circle'" ng-click="playSong()"> {{isPlaying ? ' PAUSE' : ' LISTEN'}}</a>
+      </span>
       <span class="right">
           <a href="views/about.html">
             <strong>About</strong>
           </a>
       </span>
+      <span class="right">
+        <ul>
+          <li><a class="fa fa-facebook-square"></a></li>
+          <li><a class="fa fa-google-plus-square"></a></li>
+          <li><a class="fa fa-twitter-square"></a></li>
+          <li><a class="fa fa-instagram"></a></li>
+        </ul>
+      </span>
     </div><!--/ Codrops top bar -->
+    <div class="clr"></div>
+    <div class="centered"><span ng-class="displayVolume()" ng-click="playSound()"></span></div>
 </div>
