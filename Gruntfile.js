@@ -341,6 +341,9 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
+            'fonts/{,*/}*.*',
+            'sounds/{,*/}*.*',
+            'songs/{,*/}*.*',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*'
@@ -357,7 +360,19 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
-      }
+      },
+      sounds: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/sounds',
+        dest: '.tmp/sounds/',
+        src: '{,*/}*.*'
+      },
+      songs: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/songs',
+        dest: '.tmp/songs/',
+        src: '{,*/}*.*'
+      },
     },
 
     // Run some tasks in parallel to speed up the build process
@@ -370,6 +385,8 @@ module.exports = function (grunt) {
       ],
       dist: [
         'copy:styles',
+        'copy:sounds',
+        'copy:songs',
         'imagemin',
         'svgmin'
       ]
