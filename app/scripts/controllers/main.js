@@ -12,7 +12,8 @@ angular.module('misstherainApp')
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
-      'Karma'
+      'Karma',
+      'heroku'
     ];
 
     $scope.sound = ngAudio.load("sounds/Nature-sounds-rain.mp3");
