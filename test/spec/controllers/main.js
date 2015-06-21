@@ -16,7 +16,12 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should have originSharingContent in the scope', function () {
+    expect(scope.originSharingContent).toBeDefined();
   });
+
+  it('should have playSound function', function() {
+    expect(scope.playSound).toBeDefined();
+    expect(scope.playSound).toBeTruthy();
+  })
 });
