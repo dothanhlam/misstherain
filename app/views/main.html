@@ -9,14 +9,14 @@
   <div class="container">
     <!-- Codrops top bar -->
     <div class="codrops-top">
-      <a href="https://www.youtube.com/watch?v=imGaOIm5HOk">
-        <strong class="fa fa-youtube-square"> Song for today: </strong>kiss the rain by yiruma
+      <a ng-href="{{originSharingContent.url}}">
+        <strong ng-class="originSharingContent.serviceIcon()"> Song for today: </strong>{{originSharingContent.title}} by {{originSharingContent.author}}
       </a>
       <span class="left">
         <a ng-class="isPlaying ? 'fa fa-pause': 'fa fa-play-circle'" ng-click="playSong()"> {{isPlaying ? ' PAUSE' : ' LISTEN'}}</a>
       </span>
       <span class="right">
-          <a href="views/about.html">
+          <a href="#/about">
             <strong>About</strong>
           </a>
       </span>

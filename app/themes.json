@@ -1,0 +1,38 @@
+{
+  "version" : "1.0",
+  "app": "",
+  "author": "dothanhlam@gmail.com",
+  "rainymood": {
+    "url": "sounds/Nature-sounds-rain.mp3",
+    "volume" : 1
+  },
+
+  "items": [
+    {
+      "title":"kiss the rain",
+      "author":"yiruma",
+      "url": "songs/Kiss The Rain.mp3",
+      "origin":
+      {
+        "service" : "youtube",
+        "url" : "https://www.youtube.com/watch?v=imGaOIm5HOk",
+        "title": "kiss the rain",
+        "author": "yiruma"
+      },
+      "quote": ""
+    },
+    {
+      "title":"kiss the rain",
+      "author":"yiruma",
+      "url": "",
+      "origin":
+      {
+        "service" : "youtube",
+        "url" : "",
+        "title": "",
+        "author": ""
+      },
+      "quote": ""
+    }
+  ]
+}

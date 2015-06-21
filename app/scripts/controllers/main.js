@@ -8,15 +8,25 @@
  * Controller of the misstherainApp
  */
 angular.module('misstherainApp')
-  .controller('MainCtrl', function ($scope, ngAudio) {
+  .controller('MainCtrl', function ($scope, ngAudio, Themes) {
     $scope.isPlaying = false;
     $scope.isRaining = false;
+    $scope.originSharingContent = {};
 
-    var initSoundAndSong = function() {
-      $scope.sound = ngAudio.load("sounds/Nature-sounds-rain.mp3");
+    Themes.getThemes().then(function(res) {
+      initSoundAndSong(res.items[0], res.rainy);
+
+      $scope.originSharingContent = res.items[0].origin;
+      $scope.originSharingContent.serviceIcon = function() {
+        return "fa fa-youtube-square";
+      }
+    });
+
+    var initSoundAndSong = function(item, rainy) {
+      $scope.sound = ngAudio.load(rainy.url);
       $scope.sound.loop = true;
       $scope.sound.unlock = true;
-      $scope.song = ngAudio.load("songs/Kiss The Rain.mp3");
+      $scope.song = ngAudio.load(item.url);
       $scope.song.loop = true;
       $scope.song.unlock = true;
     }
@@ -59,6 +69,4 @@ angular.module('misstherainApp')
       }
       $scope.isPlaying = !$scope.isPlaying;
     }
-
-    initSoundAndSong();
   });
