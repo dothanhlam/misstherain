@@ -56,7 +56,7 @@ body{
 	font-weight: 400;
 	font-size: 15px;
 	color: #aa3e03;
-	overflow-y: scroll;
+	overflow-y: hidden;
 	overflow-x: hidden;
 }
 .ie7 body{
@@ -69,6 +69,8 @@ a{
 .container{
 	position: relative;
 	text-align: center;
+  padding: 0;
+  margin: 0;
 }
 .clr{
 	clear: both;
